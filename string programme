@@ -1,0 +1,139 @@
+#include<stdio.h>
+#include<stdlib.h>
+void substring()
+{
+int k;
+int i=0;
+int j=0;
+char str1[12];
+char str2[12];
+printf("Enter the 1'st string in str1 \n");
+scanf("%s",str1);
+printf("Enter the 2'st string in str2 \n");
+scanf("%s",str2);
+for(k=0; str2[k]!='\0'; k++)
+for(i=0, j=0; str1[i]!='\0'&& str2[j]!='\0'; i++)
+{ if (str1[i]==str2[j])
+{ j++;
+}
+else
+{j=0 ;
+}
+}
+if(j==k)
+{printf("substring is found");
+}
+else
+{printf("substring is not found");
+}
+}
+void cpystr()
+{ int i=0;int j=0;
+char str1[12];
+char str2[12];
+printf("Enter the 1'st string in str1 \n");
+scanf("%s",str1);
+printf("1'st string in str1 %s \n",str1);
+while(str1[i]!='\0')
+{ str2[j]==str1[i];
+i++;
+j++;
+}
+str2[j]!='\0';
+printf("string copied in str2 %s\n",str2);
+}
+void palindrom()
+{ int i=0;
+int j=0;
+char str1[12];
+printf("Enter the 1'st string in str1 \n");
+scanf("%s",str1);
+while(str1[j]!='\0')
+{
+j++;
+}
+j--;
+while(i<j)
+{
+if(str1[i]==str1[j])
+{ i++;
+j--;
+}else
+{break;}
+}
+if(i<j)
+{
+printf("string %s is not palindrom \n",str1);
+}
+else
+{ printf("string %s is palindrom \n",str1);}
+}
+void reverse()
+{ int a,b;
+int i=0;
+int j=0;
+char str1[12];
+printf("Enter the 1'st string in str1 \n");
+scanf("%s",str1);
+printf("normal string is %s \n",str1);
+while (str1[j] != '\0')
+j++;
+j--;
+while(i<j)
+{
+a=str1[i];
+b=str1[j];
+str1[i]=b;
+str1[j]=a;
+i++;j--;
+}
+printf("Reverse string is %s \n",str1);
+}
+void compare()
+{
+int i=0;
+int j=0;
+char str1[12];
+char str2[12];
+printf("Enter the 1'st string in str1 \n");
+scanf("%s",str1);
+printf("Enter the 2'st string in str2\n");
+scanf ("%s",str2);
+while(str1[i] !='\0'&& str2[j]!='\0')
+{if (str1[i]==str2[j])
+{ i++;
+j++;
+}
+else break ;
+} if(str1[i]=='\0'&&str2[j]=='\0')
+printf("string are equal \n");
+else
+printf("string are not eqaul \n");
+}
+int main ()
+{ int opt ;
+printf("Student Name:- devyani sonawane, Roll No.:- 61 \n");
+printf("Enter the your option \n 1.Substring \n 2.Copy \n 3.Palindrom \n 4.Reverse \n 5.compare \n");
+scanf("%d",&opt);
+switch(opt)
+{
+case 1:
+substring();
+break;
+case 2:
+cpystr();
+break;
+case 3:
+palindrom();
+break;
+case 4:
+reverse();
+break;
+case 5:
+compare();
+break;
+default :
+printf("Invlid option \n");
+return 0 ;
+}
+}
